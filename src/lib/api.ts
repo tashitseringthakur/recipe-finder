@@ -17,23 +17,19 @@ export const api = {
   }): Promise<Recipe[]> {
     let filteredRecipes = recipes;
     
-    if (params?.search) {
-      const searchTerm = params.search.toLowerCase();
-      filteredRecipes = recipes.filter(recipe => 
-        recipe.name.toLowerCase().includes(searchTerm) ||
-        recipe.cuisine.toLowerCase().includes(searchTerm) ||
-        recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchTerm))
-      );
-    }
+    if (params?.cuisine && params.cuisine !== 'all') {
+  const cuisine = params.cuisine;
+  filteredRecipes = filteredRecipes.filter(recipe => 
+    recipe.cuisine.toLowerCase() === cuisine.toLowerCase()
+  );
+}
     
     
     if (params?.search) {
       const searchTerm = params.search.toLowerCase();
-      filteredRecipes = recipes.filter(recipe => 
-        recipe.name.toLowerCase().includes(searchTerm) ||
-        recipe.cuisine.toLowerCase().includes(searchTerm) ||
-        recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchTerm))
-      );
+      filteredRecipes = filteredRecipes.filter(recipe => 
+  recipe.cuisine.toLowerCase() === params!.cuisine!.toLowerCase()
+);
     }
     
     if (params?.offset) {
