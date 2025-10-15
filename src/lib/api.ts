@@ -22,7 +22,6 @@ export const api = {
     filteredRecipes = filteredRecipes.filter(recipe => 
       recipe.cuisine.toLowerCase() === cuisine.toLowerCase()
     );
-
 }
     
     
