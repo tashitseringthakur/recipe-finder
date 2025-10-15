@@ -14,21 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  // Core website information
+  title: "Recipe Recommender",
+  description: "Discover delicious recipes based on the ingredients you have at home. Powered by Python and Next.js.",
+  keywords: ["Recipe", "Recommender", "Cooking", "Ingredients", "Food", "Python", "Next.js", "React"],
+  authors: [{ name: "Tashi" }],
+
+  // Open Graph (for social sharing on sites like Facebook, LinkedIn)
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Recipe Recommender",
+    description: "Find your next favorite meal with this smart recipe recommender.",
+    url: "https://tashitseringthakur.github.io/recipe-finder/", // Updated to your project's URL
+    siteName: "Recipe Recommender",
     type: "website",
   },
+  
+  // Twitter Card (for sharing on Twitter)
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "Recipe Recommender by Tashi",
+    description: "Discover delicious recipes based on ingredients you have. Powered by Python and Next.js.",
   },
 };
 
