@@ -462,7 +462,7 @@ export default function RecipeFinder() {
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
-                      src={`/images/${recipe.image}`}
+                      src={`${process.env.NODE_ENV === 'production' ? '/recipe-finder' : ''}/images/${recipe.image}`}
                       alt={recipe.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
@@ -472,7 +472,7 @@ export default function RecipeFinder() {
                           `https://picsum.photos/seed/${recipe.name.replace(/\s+/g, '%20')}/400/300.jpg`,
                           `https://picsum.photos/seed/${recipe.cuisine.replace(/\s+/g, '%20')}/400/300.jpg`,
                           `https://picsum.photos/seed/recipe-${recipe.id}/400/300.jpg`,
-                          '/images/placeholder-food.jpg' // Add a placeholder image if available
+                          `${process.env.NODE_ENV === 'production' ? '/recipe-finder' : ''}/images/placeholder-food.jpg` // Add a placeholder image if available
                         ];
                         
                         // Try each fallback until one works
