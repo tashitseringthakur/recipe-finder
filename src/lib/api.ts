@@ -1,4 +1,5 @@
 import { recipes, Recipe } from './recipes-data';
+export type { Recipe };
 
 export interface RecipeResponse {
   recipes: Recipe[];
