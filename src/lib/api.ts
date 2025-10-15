@@ -26,9 +26,13 @@ export const api = {
       );
     }
     
-    if (params?.cuisine && params.cuisine !== 'all') {
-      filteredRecipes = filteredRecipes.filter(recipe => 
-        recipe.cuisine.toLowerCase() === params.cuisine.toLowerCase()
+    
+    if (params?.search) {
+      const searchTerm = params.search.toLowerCase();
+      filteredRecipes = recipes.filter(recipe => 
+        recipe.name.toLowerCase().includes(searchTerm) ||
+        recipe.cuisine.toLowerCase().includes(searchTerm) ||
+        recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchTerm))
       );
     }
     
